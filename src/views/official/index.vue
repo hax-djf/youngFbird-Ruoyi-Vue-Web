@@ -348,14 +348,14 @@ export default {
 .back-box {
   color: #fff;
   position: absolute;
-  top: -100vh;
-  left: -100px;
-  width: 150vw;
-  // height: 50vw;
-  height: 150vh;
-  border-radius: 0 280px;
-  transform: rotate(-22deg);
-  background: linear-gradient(60deg,#1E53F4,#1E53F4,#30cffd,#30cffd,#30cffd);
+  top: -110vh;
+  left: -247px;
+  width: 116vw;
+  height: 226vh;
+  border-radius: 0 150px;
+  -webkit-transform: rotate(358deg);
+  transform: rotate(360deg);
+  background: linear-gradient(134deg, #1E53F4, #c91ef4, #14b6e7d6, #fd30e4, #3cc2d8);
 }
 
 .content-page {
