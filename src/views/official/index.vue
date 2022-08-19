@@ -19,8 +19,8 @@
                 </div>
                 <div class="header-menu" :class="{ 'header-menu-open': isMenuShow }">
                     <a @click="$router.push({path:'/official'})">首页</a>
-                    <a href="https://github.com/hax-djf/flying-birds" target="_blank">开源项目</a>
-                    <a class="menu-item" href="https://github.com/hax-djf/flying-birds" target="_blank">开发文档</a>
+                    <a href="https://github.com/hax-djf/youngFbird-Ruoyi-Clouds-Oauth.git" target="_blank">开源项目</a>
+                    <a class="menu-item" href="https://github.com/hax-djf/youngFbird-Ruoyi-Clouds-Oauth.git" target="_blank">开发文档</a>
                 </div>
 
                 <div class="header-btn">
@@ -49,7 +49,7 @@
                     </div>
                 </div>
             </div>
-            <div class="content-wrapper">
+            <!-- <div class="content-wrapper">
                 <div class="en-title" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1000">OUR STRENGTHS</div>
                 <el-row :gutter="2" class="content-wrapper-features">
                     <el-col :xs="24" :md="8" data-aos="fade-right">
@@ -65,7 +65,7 @@
                         <p>基于 SpringCloud Alibaba 微服务架构</p>
                     </el-col>
                 </el-row>
-            </div>
+            </div> -->
         </el-main>
         <el-footer :style="style.footer">
             <div class="footer-page">
@@ -78,8 +78,7 @@
                     </el-col>
                     <el-col :xs="24" :md="4" :offset="1" class="project-url" data-aos="fade-up" data-aos-delay="200">
                         <h1>项目地址</h1>
-                        <a href="https://github.com/hax-djf/flying-birds" target="_blank">Gitee码云</a>
-                        <a href="https://github.com/hax-djf/flying-birds" target="_blank">Github</a>
+                        <a href="https://github.com/hax-djf/youngFbird-Ruoyi-Clouds-Oauth.git" target="_blank">Github</a>
                     </el-col>
                     <el-col :xs="24" :md="4" data-aos="fade-up" data-aos-delay="400">
                         <h1>友情地址</h1>
@@ -132,7 +131,7 @@ export default {
                     height: 'auto',
                     background:
                         'linear-gradient( 163deg, rgba(32, 84, 241, 0.67), rgba(34, 78, 243, 0.67), rgba(56, 234, 255, 0.67))',
-                    marginTop: '100px'
+                    // marginTop: '100px'
                 }
             }
         }
@@ -223,7 +222,7 @@ export default {
             }
         },
         onStart() {
-            window.open('https://github.com/hax-djf/flying-birds', '_blank')
+            window.open('https://github.com/hax-djf/youngFbird-Ruoyi-Clouds-Oauth.git', '_blank')
         },
         msgCard() {
             this.$notify({
@@ -232,7 +231,7 @@ export default {
                 position: 'bottom-left',
                 customClass: 'notify-success',
                 dangerouslyUseHTMLString: true,
-                message: '<div style="line-height: 30px">我们需要您的支持，请点击按钮帮助我们增加 gitee star。<span class="github-btn"><a href="https://github.com/hax-djf/flying-birds" target="_blank">Start</a></span></div>'
+                message: '<div style="line-height: 30px">我们需要您的支持，请点击按钮帮助我们增加 Github star。<span class="github-btn"><a href="https://github.com/hax-djf/youngFbird-Ruoyi-Clouds-Oauth.git" target="_blank">Start</a></span></div>'
             })
         }
     }

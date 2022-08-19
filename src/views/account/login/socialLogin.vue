@@ -1,6 +1,6 @@
 <template>
   
-  <div class="app-container">
+  <div class="app-container-social">
     <div v-if="bindStatus">
        <img class="header-logo-img" src="@/assets/images/indexLogo.svg"
           @click="$router.push({path:'/'})"
@@ -127,16 +127,17 @@ export default {
 };
 </script>
 
-<style rel="stylesheet/scss" lang="scss">
+<style rel="stylesheet/scss" lang="scss" scoped>
 @import '@/assets/styles/mixin.scss';
 
-.app-container {
+.app-container-social {
   height: 100%;
   width: 100%;
   display: flex;
   justify-content: center;
   align-content: center;
   align-items: center;
+  padding: 20px;
 }
 
 .login {

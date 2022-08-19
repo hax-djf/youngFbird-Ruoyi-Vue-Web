@@ -9,7 +9,7 @@ export default {
   name: 'FlybirdsDoc',
   data() {
     return {
-      url: 'https://github.com/hax-djf/flying-birds'
+      url: 'https://github.com/hax-djf/youngFbird-Ruoyi-Clouds-Oauth.git'
     }
   },
   methods: {

@@ -36,35 +36,40 @@ export default {
           name :"FBIRD-API接口文档",
           label:"FBIRD-API",
           image:"http://120.79.220.218:9000/demo/icon/api.jpg",
-          host:"http://localhost:9903",
+          // host:"http://localhost:9903",
+          host:"http://119.91.25.140:9903",
           url:"/doc.html"
         },
         {
           name :"NACOS配置注册中心",
           label:"FBIRD-NACOS",
           image:"http://120.79.220.218:9000/demo/icon/nacos.jpg",
-          host:"http://192.168.144.129:8848",
+          // host:"http://192.168.144.129:8848",
+          host:"http://120.79.220.218:8848",
           url:"/nacos/#/login"
         },
         {
           name :"SENTINEL限流管理",
           label:"FBIRD-SENTINEL",
           image:"http://120.79.220.218:9000/demo/icon/sentinel.jpg",
-          host:"http://192.168.144.129:8858",
+          // host:"http://192.168.144.129:8858",
+          host:"http://120.79.220.218:8858",
           url:"/#/login"
         },
         {
           name :"SPRING-BOOT-ADMIN监控中心",
           label:"FBIRD-ADMIN",
           image:"http://120.79.220.218:9000/demo/icon/spring-boot-admin.jpg",
-          host:"http://localhost:9100",
+          // host:"http://localhost:9100",
+          host:"http://119.91.25.140:9100",
           url:"/application"
         },
         {
           name :"MINIO分布式文件",
           label:"FBIRD-MINIO",
           image:"http://120.79.220.218:9000/demo/icon/minio.jpg",
-          host:"http://192.168.144.129:9000",
+          // host:"http://192.168.144.129:9000",
+          host:"http://120.79.220.218:9000",
           url:"/minio"
         }
       ],  

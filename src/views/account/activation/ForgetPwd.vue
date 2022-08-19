@@ -1,5 +1,5 @@
 <template>
-    <div class="app-container">
+    <div class="app-container-forget">
         <div v-if="retrieveStep===1" class="pwd-container">
             <div>
                 <img class="header-logo-img" src="@/assets/images/indexLogo.svg"
@@ -263,13 +263,14 @@ export default {
 <style lang="scss" scoped>
 @import '@/assets/styles/mixin.scss';
 
-.app-container {
+.app-container-forget {
   height: 100%;
   width: 100%;
   display: flex;
   justify-content: center;
   align-content: center;
   align-items: center;
+  padding: 20px;
 }
 
 .header-logo-img {

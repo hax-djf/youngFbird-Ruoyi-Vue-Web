@@ -7,14 +7,9 @@ import './assets/styles/element-variables.scss'
 
 import '@/assets/styles/index.scss' // global css
 import '@/assets/styles/ruoyi.scss' // ruoyi css
-import App from './App'
-import store from './store'
-import router from './router'
-import directive from './directive' // directive
-import plugins from './plugins' // plugins
-import { download } from '@/utils/request'
 import './assets/icons' // icon
 import './permission' // permission control
+import { download } from '@/utils/request'
 import { getDicts } from "@/api/system/dict/data";
 import { getConfigKey } from "@/api/system/config";
 import { 
@@ -101,6 +96,12 @@ Vue.use(directive)
 Vue.use(plugins)
 Vue.use(VueMeta)
 DictData.install()
+
+import App from './App'
+import store from './store'
+import router from './router'
+import directive from './directive' // directive
+import plugins from './plugins' // plugins
 
 /**
  * If you don't want to use mock-server

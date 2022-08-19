@@ -71,7 +71,7 @@
             size="mini"
             icon="el-icon-cloudy"
             plain
-            @click="goTarget('https://github.com/hax-djf/flying-birds')"
+            @click="goTarget('https://github.com/hax-djf/youngFbird-Ruoyi-Clouds-Oauth.git')"
             >访问码云</el-button
           >
         </p>

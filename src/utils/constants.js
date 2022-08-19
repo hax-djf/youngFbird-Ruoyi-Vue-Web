@@ -1,12 +1,10 @@
 export default {
     // 签名秘钥
-    signSecret: '916lWh2WMcbSWiHv',
+    signSecret: '916lWh2WMcbSWiHv', //目前未加密处理，明文传输，后续加上
     // 密码正则
     passwordReg: /^.{6,}$/,
     passwordRegDesc: '密码最少为6位字符',
     userUploadUrl: `${process.env.VUE_APP_API_ROOT}/user/file/upload`,
-    // 启用微信功能
-    enableAuth: process.env.VUE_APP_AUTH == 'ON'
 }
 
 /**

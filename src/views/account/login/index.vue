@@ -67,7 +67,7 @@
                                     </div>
                                 </div>
                             </el-form-item>
-                        </div>
+                        </div> 
                     </el-form>
                 </el-tab-pane>
                 <!-- 手机号免密登录 -->
@@ -76,23 +76,31 @@
                 </el-tab-pane>
             </el-tabs>
             <register v-else @success="registerSuccessHandle" />
-            <p class="desc">
-                关于FBIRD登录(需要先绑定登录)
+            <p class="desc_red">
+                关于社交登录(需要先绑定登录) 
             </p>
+            <p class="desc">
+                图片如有侵权,请联系删除。 
+            </p>  
+            <p class="desc">
+                简化版,删除了很多功能,代码生成,任务调度, 租户模式,文件服务,工作流,api监控等;
+                简化版搭建周期比较短,可能会出现一些bug,该版本主在演示;
+                管理员账号 admin/123456 
+            </p>  
         </div>
     </div>
 </template>
 
 <script>
 import "@/assets/styles/official_login.scss";
-import constants from '@/utils/constants'
 import Register from '../register/index.vue'
 import { getCodeImg } from "@/api/login";
 import Cookies from "js-cookie";
 import { encrypt, decrypt } from '@/utils/jsencrypt'
 import loginMobile from "./loginMobile.vue";
 import { socialAuthRedirect } from '@/api/oauth/auth'
-import { getToken , setTenantId} from '@/utils/auth'
+import { getToken } from '@/utils/auth'
+import constants from '@/utils/constants'
 import {SystemUserSocialTypeEnum} from "@/utils/constants";
 
 export default {
@@ -112,7 +120,7 @@ export default {
         }
         return {
             loginForm: {
-                username: "flybirds",
+                username: "admin",
                 password: "123456",
                 rememberMe: false,
                 tenantName:'FBIRD',
@@ -221,7 +229,7 @@ export default {
                 }
                 //发送异步任务->store中的user.js中模块
                 this.$store.dispatch("Login", this.loginForm).then(() => {
-                    this.$router.push({ path: this.redirect || "/application/panel" }).catch(()=>{});
+                    this.$router.push({ path: this.redirect || "/index" }).catch(()=>{});
                 }).catch(() => {
                     this.loading = false;
                     this.getCode();
@@ -234,6 +242,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.desc_red{
+    color: red;
+}
 .logo-content ::v-deep.el-tabs__nav-wrap::after {
   position: static !important;
 }
