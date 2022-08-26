@@ -3,16 +3,46 @@
     <el-form ref="form" :model="user" :rules="rules" label-width="80px">
       <el-form-item label="用户昵称" prop="nickName">
         <el-input v-model="user.nickName" />
-      </el-form-item> 
+      </el-form-item>
       <el-form-item label="手机号码" prop="phonenumber">
-        <el-input :disabled="true" v-model="user.phonenumber" maxlength="11">
-          <el-button slot="suffix" type="primary" @click="phoneDialogVisible">绑定</el-button>
-        </el-input>
+        <el-row :span="24">
+          <el-col :span="16">
+            <el-input
+              :disabled="true"
+              v-model="user.phonenumber"
+              maxlength="11"
+            >
+            </el-input>
+          </el-col>
+          <el-col :offset="2" :span="4">
+            <div class="login-code">
+              <el-button
+                slot="suffix"
+                type="primary"
+                @click="phoneDialogVisible"
+                >绑定</el-button
+              >
+            </div>
+          </el-col>
+        </el-row>
       </el-form-item>
       <el-form-item label="邮箱" prop="email">
-        <el-input :disabled="true" v-model="user.email" maxlength="50">
-          <el-button slot="suffix" type="primary" @click="emailDialogVisible">绑定</el-button>
-        </el-input>
+        <el-row :span="24">
+          <el-col :span="16">
+            <el-input :disabled="true" v-model="user.email" maxlength="50">
+            </el-input>
+          </el-col>
+          <el-col :offset="2" :span="4">
+            <div class="login-code">
+              <el-button
+                slot="suffix"
+                type="primary"
+                @click="emailDialogVisible"
+                >绑定</el-button
+              >
+            </div>
+          </el-col>
+        </el-row>
       </el-form-item>
       <el-form-item label="性别">
         <el-radio-group v-model="user.sex">
@@ -35,62 +65,59 @@ import { updateUserProfile } from "@/api/system/user";
 import userUpdate from "./userUpdate";
 
 export default {
-  components: {userUpdate},
+  components: { userUpdate },
   props: {
     user: {
-      type: Object
-    }
+      type: Object,
+    },
   },
   data() {
     return {
       // 表单校验
       rules: {
         nickName: [
-          { required: true, message: "用户昵称不能为空", trigger: "blur" }
+          { required: true, message: "用户昵称不能为空", trigger: "blur" },
         ],
         email: [
           { required: true, message: "邮箱地址不能为空", trigger: "blur" },
           {
             type: "email",
             message: "'请输入正确的邮箱地址",
-            trigger: ["blur", "change"]
-          }
+            trigger: ["blur", "change"],
+          },
         ],
         phonenumber: [
           { required: true, message: "手机号码不能为空", trigger: "blur" },
           {
             pattern: /^1[3|4|5|6|7|8|9][0-9]\d{8}$/,
             message: "请输入正确的手机号码",
-            trigger: "blur"
-          }
+            trigger: "blur",
+          },
         ],
-        code: [
-          {required: true, trigger: 'blur', message: '请输入验证码'}
-        ]
-        
-      }
+        code: [{ required: true, trigger: "blur", message: "请输入验证码" }],
+      },
     };
   },
   methods: {
     submit() {
-      this.$refs["form"].validateField('nickName',valid => {
+      this.$refs["form"].validateField("nickName", (valid) => {
         if (!valid) {
-          updateUserProfile(this.user).then(response => {
+          updateUserProfile(this.user).then((response) => {
             this.msgSuccess("修改成功");
           });
         }
       });
     },
-    phoneDialogVisible(){
-      this.$refs['userUpdate'].phoneDialogVisible = true;
+    phoneDialogVisible() {
+      this.$refs["userUpdate"].phoneDialogVisible = true;
     },
-    emailDialogVisible(){
-      this.$refs['userUpdate'].emailDialogVisible = true;
+    emailDialogVisible() {
+      this.$refs["userUpdate"].emailDialogVisible = true;
     },
     close() {
       this.$store.dispatch("tagsView/delView", this.$route);
       this.$router.push({ path: "/index" });
-    }
-  }
+    },
+  },
 };
 </script>

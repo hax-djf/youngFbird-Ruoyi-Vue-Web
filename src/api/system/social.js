@@ -9,3 +9,12 @@ export function listSocialUser(query) {
     params: query
   })
 }
+
+//解除绑定
+export function socialUnbind(data) {
+  return request({
+    url: '/system/social/social-unbind',
+    method: 'post',
+    data: data
+  })
+}

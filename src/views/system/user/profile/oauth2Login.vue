@@ -52,6 +52,7 @@
       <template slot-scope="scope">
         <el-button
           type="danger"
+          @click="socialUnbind(scope.row)"
           size="small">
           解除绑定
         </el-button>
@@ -61,7 +62,7 @@
 </template>
 
 <script>
-import { listSocialUser } from "@/api/system/social";
+import { listSocialUser,socialUnbind } from "@/api/system/social";
 import { SystemUserSocialList } from "@/utils/constants";
 export default {
   data() {
@@ -81,6 +82,31 @@ export default {
     },
     getLogo(type) {
       return this.UserSocialList.find((item) => (item.type = type)).img;
+    },
+    //取消社交绑定
+    socialUnbind(row){
+      this.$confirm('确认取消社交绑定用户'+row.nickname+'?', '提示', {
+          confirmButtonText: '确定',
+          cancelButtonText: '取消',
+          type: 'warning'
+        }).then(() => {
+          let query ={
+            type:row.type,
+            unionId:row.unionId
+          }
+          socialUnbind(query).then((res) => {
+              this.$message({
+                type: 'success',
+                message: '取消绑定成功!'
+              });
+              this.getList();
+          });
+        }).catch(() => {
+          this.$message({
+            type: 'info',
+            message: '已取消解绑'
+          });          
+        });
     },
   },
 };
